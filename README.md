@@ -2,81 +2,74 @@
 
 ## Overview
 
-This project aims to predict the likelihood of heart disease using machine learning models. The project includes data preprocessing, feature selection, dimensionality reduction, model training, and a user-friendly Streamlit application for real-time predictions.
+This project leverages machine learning to predict the likelihood of heart disease based on patient health data. It encompasses data preprocessing, feature engineering, dimensionality reduction, model training, and a user-friendly Streamlit application for real-time predictions.
 
 ## Key Features
 
-1. **Data Preprocessing**:
+### 1. Data Preprocessing
+- **Missing Values**: Imputed using median for numerical features and mode for categorical features.
+- **Encoding**: Applied Label Encoding to transform categorical variables.
+- **Scaling**: Standardized numerical features using `StandardScaler`.
+- **Outlier Detection**: Identified and analyzed outliers using the Interquartile Range (IQR) method.
 
-   - Handled missing values using median and mode imputation.
-   - Encoded categorical variables using Label Encoding.
-   - Scaled numerical features using StandardScaler.
-   - Detected and analyzed outliers using the IQR method.
+### 2. Feature Selection
+- **Feature Importance**: Ranked predictors using Random Forest feature importance.
+- **Recursive Feature Elimination (RFE)**: Selected optimal features for model performance.
+- **Statistical Testing**: Conducted Chi-Square tests to assess feature significance.
+- **Reduced Dataset**: Created a streamlined dataset with the most predictive features.
 
-2. **Feature Selection**:
+### 3. Dimensionality Reduction
+- **Principal Component Analysis (PCA)**: Reduced feature dimensionality while preserving 95% of variance.
+- **Visualization**: Plotted cumulative explained variance and PCA-transformed data for insight.
 
-   - Used Random Forest feature importance to rank predictors.
-   - Applied Recursive Feature Elimination (RFE) to select the best features.
-   - Performed Chi-Square tests to evaluate feature significance.
-   - Created a reduced dataset with the most relevant features.
+### 4. Model Training
+- **Algorithms**: Trained Logistic Regression, Decision Tree, Random Forest, and Support Vector Machine (SVM) models.
+- **Optimization**: Tuned hyperparameters using `GridSearchCV` and `RandomizedSearchCV`.
+- **Model Persistence**: Saved the best-performing Random Forest model for deployment.
 
-3. **Dimensionality Reduction**:
+### 5. Streamlit Application
+- **User Interface**: Built an intuitive UI for real-time heart disease predictions.
+- **Functionality**: Allows users to input health metrics and view prediction probabilities.
+- **Risk Assessment**: Displays risk levels based on prediction confidence.
 
-   - Applied Principal Component Analysis (PCA) to reduce feature dimensionality while retaining 95% variance.
-   - Visualized cumulative explained variance and PCA-transformed data.
+## Project Structure
 
-4. **Model Training**:
+- **`data_preprocessing.ipynb`**: Notebook for data cleaning and preprocessing steps.
+- **`feature_selection.ipynb`**: Notebook for feature selection and analysis.
+- **`dimensionality_reduction_pca.ipynb`**: Notebook for PCA-based dimensionality reduction.
+- **`classification_models.ipynb`**: Notebook for training and evaluating classification models.
+- **`streamlit_ui.py`**: Streamlit script for the real-time prediction interface.
+- **`trained_feature_names.txt`**: List of feature names used in the trained model.
+- **`heart_disease_cleaned.csv`**: Preprocessed dataset.
+- **`heart_disease_reduced_with_binary.csv`**: Reduced dataset with binary target variable.
+- **`optimized_random_forest_model.pkl`**: Serialized Random Forest model for deployment.
 
-   - Trained multiple classification models, including Logistic Regression, Decision Tree, Random Forest, and SVM.
-   - Optimized models using GridSearchCV and RandomizedSearchCV.
-   - Saved the best-performing Random Forest model for deployment.
+## Getting Started
 
-5. **Streamlit Application**:
-   - Developed a user-friendly UI for real-time heart disease prediction.
-   - Allowed users to input health data and view predictions with probabilities.
-   - Displayed risk levels based on prediction probabilities.
+### Prerequisites
+- Python 3.8+
+- Required libraries: Install via `pip install -r requirements.txt`.
+- Ensure all datasets and the trained model file are in the project directory.
 
-## Files and Directories
+### Running the Streamlit App
+1. Open a terminal in the project directory.
+2. Run the following command:
+   ```bash
+   streamlit run streamlit_ui.py
+   ```
+3. Access the app via the local URL provided in the terminal (e.g., `http://localhost:8501`).
 
-- `data_preprocessing.ipynb`: Notebook for data cleaning and preprocessing.
-- `feature_selection.ipynb`: Notebook for feature selection techniques.
-- `dimensionality_reduction_pca.ipynb`: Notebook for PCA-based dimensionality reduction.
-- `classification_models.ipynb`: Notebook for training and evaluating classification models.
-- `streamlit_ui.py`: Streamlit application for real-time predictions.
-- `trained_feature_names.txt`: File containing feature names used during model training.
-- `heart_disease_cleaned.csv`: Cleaned dataset after preprocessing.
-- `heart_disease_reduced_with_binary.csv`: Reduced dataset with binary target variable.
-- `optimized_random_forest_model.pkl`: Trained Random Forest model saved for deployment.
-
-## How to Run the Project
-
-1. **Set Up Environment**:
-
-   - Install required Python libraries: `pip install -r requirements.txt`.
-   - Ensure all necessary files (e.g., datasets, model) are in the project directory.
-
-2. **Run the Streamlit App**:
-
-   - Execute the following command in the terminal:
-     ```bash
-     streamlit run streamlit_ui.py
-     ```
-   - Open the provided local URL in your browser to access the app.
-
-3. **Explore Notebooks**:
-   - Open the Jupyter notebooks to explore data preprocessing, feature selection, dimensionality reduction, and model training steps.
+### Exploring Notebooks
+- Use Jupyter Notebook to explore the preprocessing, feature selection, dimensionality reduction, and model training steps in the provided `.ipynb` files.
 
 ## Results
-
-- The optimized Random Forest model achieved high accuracy and reliability in predicting heart disease.
-- The Streamlit app provides an intuitive interface for users to input health data and receive predictions.
+- The optimized Random Forest model delivers high accuracy and robust performance in predicting heart disease.
+- The Streamlit app offers an accessible interface for users to input health data and receive instant predictions with risk levels.
 
 ## Acknowledgments
-
-- Dataset sourced from the UCI Machine Learning Repository.
-- Libraries used: pandas, numpy, scikit-learn, matplotlib, seaborn, Streamlit.
+- **Dataset**: Sourced from the [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Heart+Disease).
+- **Libraries**: Utilizes `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`, and `Streamlit`.
 
 ## Deployment
-
-The Streamlit application is deployed and accessible at the following link:
+The Streamlit application is live and accessible at:  
 [Heart Disease Prediction App](https://heart-diseasepredict.streamlit.app/)
