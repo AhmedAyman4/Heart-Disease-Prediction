@@ -71,12 +71,6 @@ This project aims to predict the likelihood of heart disease using machine learn
 - The optimized Random Forest model achieved high accuracy and reliability in predicting heart disease.
 - The Streamlit app provides an intuitive interface for users to input health data and receive predictions.
 
-## Future Work
-
-- Integrate additional machine learning models for comparison.
-- Enhance the Streamlit app with more visualizations and insights.
-- Deploy the app to a cloud platform for wider accessibility.
-
 ## Acknowledgments
 
 - Dataset sourced from the UCI Machine Learning Repository.
