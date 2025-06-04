@@ -82,6 +82,7 @@ This project aims to predict the likelihood of heart disease using machine learn
 - Dataset sourced from the UCI Machine Learning Repository.
 - Libraries used: pandas, numpy, scikit-learn, matplotlib, seaborn, Streamlit.
 
-## License
+## Deployment
 
-This project is licensed under the MIT License.
+The Streamlit application is deployed and accessible at the following link:
+[Heart Disease Prediction App](https://heart-diseasepredict.streamlit.app/)
