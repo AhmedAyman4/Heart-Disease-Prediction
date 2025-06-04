@@ -5,10 +5,10 @@ venv/
 .ipynb_checkpoints/
 
 # Ignore model files
-*.pkl
+# *.pkl
 
 # Ignore dataset files
-*.csv
+# *.csv
 
 # Ignore Python cache files
 __pycache__/
@@ -25,4 +25,4 @@ __pycache__/
 *.log
 
 # Ignore trained feature names
-trained_feature_names.txt
+# trained_feature_names.txt

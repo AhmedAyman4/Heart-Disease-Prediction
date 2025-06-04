@@ -1,0 +1,9 @@
+thalach
+trestbps
+age
+ca
+thal
+exang
+oldpeak
+slope
+chol
